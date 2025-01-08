@@ -1,0 +1,20 @@
+@use "variables" as *;
+@use "functions" as *;
+@use "mixins" as *;
+
+// ie9+
+%visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  inline-size: rem(1px);
+  block-size: rem(1px);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+%u-hover-focus {
+  @include hover-focus(color 0.3s) {
+    color: $clr-material-theme-ref-key-colors-primary;
+  }
+}

@@ -1,0 +1,229 @@
+@use "functions" as *;
+
+// Default paddings
+$padding: rem(20px);
+
+// Frame - container with paddings
+$container: rem(1240px);
+$frame: $container + 2 * $padding;
+
+// Material UI BP
+$xs: 0;
+$sm: em(600px);
+$md: em(900px);
+$lg: em(1200px);
+$xl: em(1536px);
+
+// Bootstrap BP
+$tiny: em(320px);
+$xx-small: em(375px);
+$x-small: em(480px);
+$small: em(576px);
+$medium: em(768px);
+$large: em(992px);
+$x-large: em(1200px);
+$xx-large: em(1400px);
+$huge: em(1900px);
+
+// Header
+$bp-menu: em(768px);
+
+// Font Families
+$ff-sans-primary: quicksand, sans-serif;
+
+// Font Sizes
+
+// Font weights
+$fw-medium: 500;
+$fw-semi-bold: 600;
+$fw-bold: 700;
+
+// Main colors
+$clr-schemes-primary-light: hsl(262deg 25% 44%);
+$clr-schemes-surface-tint-light: hsl(262deg 25% 44%);
+$clr-schemes-on-primary-light: hsl(0deg 0% 100%);
+$clr-schemes-primary-container-light: hsl(266deg 100% 93%);
+$clr-schemes-on-primary-container-light: hsl(264deg 66% 16%);
+$clr-schemes-secondary-light: hsl(183deg 100% 22%);
+$clr-schemes-on-secondary-light: hsl(0deg 0% 100%);
+$clr-schemes-secondary-container-light: hsl(183deg 82% 79%);
+$clr-schemes-on-secondary-container-light: hsl(182deg 100% 6%);
+$clr-schemes-tertiary-light: hsl(114deg 30% 31%);
+$clr-schemes-on-tertiary-light: hsl(0deg 0% 100%);
+$clr-schemes-tertiary-container-light: hsl(108deg 67% 82%);
+$clr-schemes-on-tertiary-container-light: hsl(124deg 100% 7%);
+$clr-schemes-error-light: hsl(3deg 35% 42%);
+$clr-schemes-on-error-light: hsl(0deg 0% 100%);
+$clr-schemes-error-container-light: hsl(5deg 100% 92%);
+$clr-schemes-on-error-container-light: hsl(359deg 76% 13%);
+$clr-schemes-background-light: hsl(293deg 100% 98%);
+$clr-schemes-on-background-light: hsl(264deg 8% 12%);
+$clr-schemes-surface-light: hsl(293deg 100% 98%);
+$clr-schemes-on-surface-light: hsl(264deg 8% 12%);
+$clr-schemes-surface-variant-light: hsl(284deg 22% 90%);
+$clr-schemes-on-surface-variant-light: hsl(267deg 6% 29%);
+$clr-schemes-outline-light: hsl(270deg 4% 48%);
+$clr-schemes-outline-variant-light: hsl(278deg 10% 79%);
+$clr-schemes-shadow-light: hsl(0deg 0% 0%);
+$clr-schemes-scrim-light: hsl(0deg 0% 0%);
+$clr-schemes-inverse-surface-light: hsl(270deg 6% 20%);
+$clr-schemes-inverse-on-surface-light: hsl(287deg 36% 95%);
+$clr-schemes-inverse-primary-light: hsl(263deg 92% 86%);
+$clr-schemes-primary-fixed-light: hsl(266deg 100% 93%);
+$clr-schemes-on-primary-fixed-light: hsl(264deg 66% 16%);
+$clr-schemes-primary-fixed-dim-light: hsl(263deg 92% 86%);
+$clr-schemes-on-primary-fixed-variant-light: hsl(261deg 32% 35%);
+$clr-schemes-secondary-fixed-light: hsl(183deg 82% 79%);
+$clr-schemes-on-secondary-fixed-light: hsl(182deg 100% 6%);
+$clr-schemes-secondary-fixed-dim-light: hsl(183deg 54% 68%);
+$clr-schemes-on-secondary-fixed-variant-light: hsl(183deg 100% 16%);
+$clr-schemes-tertiary-fixed-light: hsl(108deg 67% 82%);
+$clr-schemes-on-tertiary-fixed-light: hsl(124deg 100% 7%);
+$clr-schemes-tertiary-fixed-dim-light: hsl(109deg 40% 71%);
+$clr-schemes-on-tertiary-fixed-variant-light: hsl(115deg 40% 22%);
+$clr-schemes-surface-dim-light: hsl(285deg 11% 86%);
+$clr-schemes-surface-bright-light: hsl(293deg 100% 98%);
+$clr-schemes-surface-container-lowest-light: hsl(0deg 0% 100%);
+$clr-schemes-surface-container-low-light: hsl(293deg 40% 96%);
+$clr-schemes-surface-container-light: hsl(292deg 27% 94%);
+$clr-schemes-surface-container-high-light: hsl(293deg 19% 92%);
+$clr-schemes-surface-container-highest-light: hsl(293deg 15% 89%);
+$clr-extended-colors-custom-color-1-light: hsl(202deg 57% 34%);
+$clr-extended-colors-on-custom-color-1-light: hsl(0deg 0% 100%);
+$clr-extended-colors-custom-color-1-container-light: hsl(208deg 100% 89%);
+$clr-extended-colors-on-custom-color-1-container-light: hsl(202deg 100% 9%);
+$clr-600-light: hsl(207deg 26% 7%);
+$clr-500-light: hsl(207deg 17% 23%);
+$clr-400-light: hsl(206deg 14% 33%);
+$clr-300-light: hsl(204deg 8% 51%);
+$clr-200-light: hsl(206deg 8% 83%);
+$clr-100-light: hsl(240deg 10% 96%);
+$clr-50-light: hsl(0deg 0% 100%);
+$clr-yellow-light: hsl(50deg 100% 59%);
+$clr-bg-light: hsl(240deg 33% 99%);
+
+// Color Styles
+$clr-text-gradient: linear-gradient(
+  90deg,
+  hsl(182deg 100% 40%),
+  hsl(264deg 100% 62%)
+);
+$clr-material-theme-white: hsl(0deg 0% 100%);
+$clr-material-theme-black: hsl(0deg 0% 0%);
+$clr-material-theme-ref-primary-primary100: hsl(0deg 0% 100%);
+$clr-material-theme-ref-primary-primary99: hsl(300deg 100% 99%);
+$clr-material-theme-ref-primary-primary98: hsl(293deg 100% 98%);
+$clr-material-theme-ref-primary-primary95: hsl(273deg 100% 96%);
+$clr-material-theme-ref-primary-primary90: hsl(266deg 100% 93%);
+$clr-material-theme-ref-primary-primary80: hsl(262deg 100% 87%);
+$clr-material-theme-ref-primary-primary70: hsl(262deg 100% 80%);
+$clr-material-theme-ref-primary-primary60: hsl(262deg 100% 73%);
+$clr-material-theme-ref-primary-primary50: hsl(263deg 100% 65%);
+$clr-material-theme-ref-primary-primary40: hsl(266deg 85% 53%);
+$clr-material-theme-ref-primary-primary35: hsl(269deg 100% 44%);
+$clr-material-theme-ref-primary-primary30: hsl(269deg 100% 38%);
+$clr-material-theme-ref-primary-primary25: hsl(269deg 100% 33%);
+$clr-material-theme-ref-primary-primary20: hsl(268deg 100% 27%);
+$clr-material-theme-ref-primary-primary15: hsl(268deg 100% 22%);
+$clr-material-theme-ref-primary-primary10: hsl(267deg 100% 17%);
+$clr-material-theme-ref-primary-primary5: hsl(264deg 100% 12%);
+$clr-material-theme-ref-primary-primary0: hsl(0deg 0% 0%);
+$clr-material-theme-ref-secondary-secondary100: hsl(0deg 0% 100%);
+$clr-material-theme-ref-secondary-secondary99: hsl(180deg 100% 97%);
+$clr-material-theme-ref-secondary-secondary98: hsl(182deg 100% 95%);
+$clr-material-theme-ref-secondary-secondary95: hsl(184deg 100% 87%);
+$clr-material-theme-ref-secondary-secondary90: hsl(183deg 88% 77%);
+$clr-material-theme-ref-secondary-secondary80: hsl(183deg 74% 56%);
+$clr-material-theme-ref-secondary-secondary70: hsl(182deg 100% 39%);
+$clr-material-theme-ref-secondary-secondary60: hsl(182deg 100% 33%);
+$clr-material-theme-ref-secondary-secondary50: hsl(183deg 100% 27%);
+$clr-material-theme-ref-secondary-secondary40: hsl(183deg 100% 22%);
+$clr-material-theme-ref-secondary-secondary35: hsl(183deg 100% 19%);
+$clr-material-theme-ref-secondary-secondary30: hsl(183deg 100% 16%);
+$clr-material-theme-ref-secondary-secondary25: hsl(183deg 100% 14%);
+$clr-material-theme-ref-secondary-secondary20: hsl(182deg 100% 11%);
+$clr-material-theme-ref-secondary-secondary15: hsl(183deg 100% 9%);
+$clr-material-theme-ref-secondary-secondary10: hsl(182deg 100% 6%);
+$clr-material-theme-ref-secondary-secondary5: hsl(183deg 100% 4%);
+$clr-material-theme-ref-secondary-secondary0: hsl(0deg 0% 0%);
+$clr-material-theme-ref-tertiary-tertiary100: hsl(0deg 0% 100%);
+$clr-material-theme-ref-tertiary-tertiary99: hsl(94deg 100% 97%);
+$clr-material-theme-ref-tertiary-tertiary98: hsl(101deg 100% 95%);
+$clr-material-theme-ref-tertiary-tertiary95: hsl(109deg 100% 87%);
+$clr-material-theme-ref-tertiary-tertiary90: hsl(110deg 71% 81%);
+$clr-material-theme-ref-tertiary-tertiary80: hsl(118deg 68% 62%);
+$clr-material-theme-ref-tertiary-tertiary70: hsl(121deg 52% 51%);
+$clr-material-theme-ref-tertiary-tertiary60: hsl(126deg 70% 38%);
+$clr-material-theme-ref-tertiary-tertiary50: hsl(132deg 100% 27%);
+$clr-material-theme-ref-tertiary-tertiary40: hsl(130deg 100% 22%);
+$clr-material-theme-ref-tertiary-tertiary35: hsl(130deg 100% 19%);
+$clr-material-theme-ref-tertiary-tertiary30: hsl(129deg 100% 16%);
+$clr-material-theme-ref-tertiary-tertiary25: hsl(128deg 100% 14%);
+$clr-material-theme-ref-tertiary-tertiary20: hsl(126deg 100% 11%);
+$clr-material-theme-ref-tertiary-tertiary15: hsl(125deg 100% 9%);
+$clr-material-theme-ref-tertiary-tertiary10: hsl(124deg 100% 7%);
+$clr-material-theme-ref-tertiary-tertiary5: hsl(123deg 100% 4%);
+$clr-material-theme-ref-tertiary-tertiary0: hsl(0deg 0% 0%);
+$clr-material-theme-ref-error-error100: hsl(0deg 0% 100%);
+$clr-material-theme-ref-error-error99: hsl(300deg 100% 99%);
+$clr-material-theme-ref-error-error98: hsl(8deg 100% 98%);
+$clr-material-theme-ref-error-error95: hsl(6deg 100% 96%);
+$clr-material-theme-ref-error-error90: hsl(5deg 100% 92%);
+$clr-material-theme-ref-error-error80: hsl(4deg 100% 84%);
+$clr-material-theme-ref-error-error70: hsl(3deg 100% 76%);
+$clr-material-theme-ref-error-error60: hsl(0deg 100% 66%);
+$clr-material-theme-ref-error-error50: hsl(359deg 70% 54%);
+$clr-material-theme-ref-error-error40: hsl(356deg 73% 42%);
+$clr-material-theme-ref-error-error35: hsl(353deg 89% 35%);
+$clr-material-theme-ref-error-error30: hsl(351deg 100% 29%);
+$clr-material-theme-ref-error-error25: hsl(352deg 100% 25%);
+$clr-material-theme-ref-error-error20: hsl(353deg 100% 20%);
+$clr-material-theme-ref-error-error15: hsl(354deg 100% 16%);
+$clr-material-theme-ref-error-error10: hsl(356deg 100% 13%);
+$clr-material-theme-ref-error-error5: hsl(357deg 100% 9%);
+$clr-material-theme-ref-error-error0: hsl(0deg 0% 0%);
+$clr-material-theme-ref-neutral-neutral100: hsl(0deg 0% 100%);
+$clr-material-theme-ref-neutral-neutral99: hsl(187deg 100% 98%);
+$clr-material-theme-ref-neutral-neutral98: hsl(0deg 40% 98%);
+$clr-material-theme-ref-neutral-neutral95: hsl(12deg 19% 95%);
+$clr-material-theme-ref-neutral-neutral90: hsl(15deg 7% 89%);
+$clr-material-theme-ref-neutral-neutral80: hsl(15deg 4% 78%);
+$clr-material-theme-ref-neutral-neutral70: hsl(0deg 2% 67%);
+$clr-material-theme-ref-neutral-neutral60: hsl(0deg 1% 57%);
+$clr-material-theme-ref-neutral-neutral50: hsl(30deg 1% 47%);
+$clr-material-theme-ref-neutral-neutral40: hsl(0deg 1% 37%);
+$clr-material-theme-ref-neutral-neutral35: hsl(0deg 1% 32%);
+$clr-material-theme-ref-neutral-neutral30: hsl(0deg 1% 28%);
+$clr-material-theme-ref-neutral-neutral25: hsl(0deg 1% 23%);
+$clr-material-theme-ref-neutral-neutral20: hsl(0deg 1% 19%);
+$clr-material-theme-ref-neutral-neutral15: hsl(60deg 1% 15%);
+$clr-material-theme-ref-neutral-neutral10: hsl(0deg 2% 11%);
+$clr-material-theme-ref-neutral-neutral5: hsl(0deg 0% 7%);
+$clr-material-theme-ref-neutral-neutral0: hsl(0deg 0% 0%);
+$clr-material-theme-ref-neutral-variant-neutral-variant100: hsl(0deg 0% 100%);
+$clr-material-theme-ref-neutral-variant-neutral-variant99: hsl(225deg 100% 99%);
+$clr-material-theme-ref-neutral-variant-neutral-variant98: hsl(0deg 40% 98%);
+$clr-material-theme-ref-neutral-variant-neutral-variant95: hsl(15deg 14% 95%);
+$clr-material-theme-ref-neutral-variant-neutral-variant90: hsl(15deg 7% 89%);
+$clr-material-theme-ref-neutral-variant-neutral-variant80: hsl(15deg 4% 78%);
+$clr-material-theme-ref-neutral-variant-neutral-variant70: hsl(20deg 2% 67%);
+$clr-material-theme-ref-neutral-variant-neutral-variant60: hsl(0deg 1% 57%);
+$clr-material-theme-ref-neutral-variant-neutral-variant50: hsl(30deg 1% 47%);
+$clr-material-theme-ref-neutral-variant-neutral-variant40: hsl(0deg 1% 37%);
+$clr-material-theme-ref-neutral-variant-neutral-variant35: hsl(0deg 1% 32%);
+$clr-material-theme-ref-neutral-variant-neutral-variant30: hsl(0deg 1% 28%);
+$clr-material-theme-ref-neutral-variant-neutral-variant25: hsl(0deg 1% 23%);
+$clr-material-theme-ref-neutral-variant-neutral-variant20: hsl(0deg 1% 19%);
+$clr-material-theme-ref-neutral-variant-neutral-variant15: hsl(0deg 0% 15%);
+$clr-material-theme-ref-neutral-variant-neutral-variant10: hsl(300deg 2% 11%);
+$clr-material-theme-ref-neutral-variant-neutral-variant5: hsl(0deg 0% 7%);
+$clr-material-theme-ref-neutral-variant-neutral-variant0: hsl(0deg 0% 0%);
+$clr-material-theme-ref-key-colors-primary: hsl(264deg 100% 62%);
+$clr-material-theme-ref-key-colors-secondary: hsl(182deg 100% 40%);
+$clr-material-theme-ref-key-colors-tertiary: hsl(120deg 56% 55%);
+$clr-material-theme-ref-key-colors-error: hsl(0deg 100% 66%);
+$clr-material-theme-ref-key-colors-neutral: hsl(0deg 0% 100%);
+$clr-material-theme-ref-key-colors-neutral-variant: hsl(240deg 10% 96%);
+$clr-material-theme-source-seed: hsl(264deg 100% 62%);
+$clr-material-theme-extended-custom-color-1-seed: hsl(207deg 26% 7%);
+$clr-material-theme-extended-custom-color-1-value: hsl(207deg 26% 7%);

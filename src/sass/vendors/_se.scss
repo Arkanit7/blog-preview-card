@@ -1,0 +1,100 @@
+// Scroll effect
+// animation library
+
+$fade-horizontal: 160px;
+$fade-vertical: 80px;
+
+[data-se] {
+  transition-duration: 0.3s;
+}
+
+[data-se].is-visible {
+  transition-duration: 0.5s;
+}
+
+$i: 0;
+
+@while $i < 3 {
+  $i: $i + 0.1;
+
+  [data-se-duration="#{$i}s"].is-visible {
+    transition-duration: #{$i}s;
+  }
+}
+
+$i: 0;
+
+@while $i < 3 {
+  $i: $i + 0.1;
+
+  [data-se-delay="#{$i}s"].is-visible {
+    transition-delay: #{$i}s;
+  }
+}
+
+[data-se|="fade"] {
+  transition-property: opacity, transform;
+}
+
+[data-se="fade"]:not(.is-visible) {
+  opacity: 0;
+}
+
+[data-se="fade-left"]:not(.is-visible) {
+  opacity: 0;
+  transform: translateX($fade-horizontal);
+}
+
+[data-se="fade-right"]:not(.is-visible) {
+  opacity: 0;
+  transform: translateX(-$fade-horizontal);
+}
+
+[data-se="fade-up"]:not(.is-visible) {
+  opacity: 0;
+  transform: translateY($fade-vertical);
+}
+
+[data-se="fade-down"]:not(.is-visible) {
+  opacity: 0;
+  transform: translateY(-$fade-vertical);
+}
+
+// zoom
+
+[data-se|="zoom"] {
+  transition-property: opacity, transform;
+}
+
+[data-se="zoom-in"]:not(.is-visible) {
+  opacity: 0;
+  transform: scale(0);
+}
+
+[data-se="zoom-out"]:not(.is-visible) {
+  opacity: 0;
+  transform: scale(2);
+}
+
+// flip
+
+[data-se|="flip"] {
+  transition-property: transform;
+  backface-visibility: hidden;
+}
+
+[data-se="flip-left"]:not(.is-visible) {
+  transform: perspective(2500px) rotateY(-100deg);
+}
+
+[data-se="flip-right"]:not(.is-visible) {
+  transform: perspective(2500px) rotateY(100deg);
+}
+
+[data-se="flip-up"]:not(.is-visible) {
+  transform: perspective(2500px) rotateX(-100deg);
+}
+
+[data-se="flip-down"]:not(.is-visible) {
+  transform: perspective(2500px) rotateX(100deg);
+}

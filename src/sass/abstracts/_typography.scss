@@ -1,0 +1,338 @@
+@use "variables" as *;
+@use "functions" as *;
+@use "mixins" as *;
+@use "placeholders" as *;
+@use "rsv" as *;
+
+@mixin font-sub-headline {
+  font-weight: 600;
+  font-size: rem(20px);
+  font-family: $ff-sans-primary;
+  line-height: 1.6;
+}
+
+@mixin font-title {
+  font-weight: 700;
+  font-size: rem(18px);
+  font-family: $ff-sans-primary;
+  line-height: 144.44%;
+}
+
+@mixin font-menu {
+  font-weight: 600;
+  font-size: 1rem;
+  font-family: $ff-sans-primary;
+  line-height: 1.5;
+}
+
+@mixin font-caption {
+  font-weight: 500;
+  font-size: 13px;
+  font-family: $ff-sans-primary;
+  line-height: 184.62%;
+}
+
+@mixin font-chip {
+  font-weight: 700;
+  font-size: 12px;
+  font-family: $ff-sans-primary;
+  line-height: 133.33%;
+  letter-spacing: 10%;
+}
+
+@mixin font-20 {
+  font-weight: 500;
+  font-size: 20px;
+
+  // 20 //
+  font-family: $ff-sans-primary;
+  line-height: 160%;
+}
+
+@mixin font-semibold {
+  font-weight: 600;
+  font-size: 16px;
+
+  // semibold //
+  font-family: $ff-sans-primary;
+  line-height: 156.25%;
+}
+
+@mixin font-material-theme-display-large {
+  font-weight: 400;
+  font-size: 72px;
+
+  // material-theme/display/large //
+  font-family: Roboto, sans-serif;
+
+  /* Recommend for responsive css clamp(mobile, mid, desktop) - 
+ you can change 5vw value
+  font-size:clamp(50px, 5vw, 72px); */
+  line-height: 88.89%;
+  letter-spacing: -0.2px;
+}
+
+@mixin font-material-theme-display-medium {
+  font-weight: 400;
+  font-size: 45px;
+
+  // material-theme/display/medium //
+  font-family: Roboto, sans-serif;
+  line-height: 115.56%;
+}
+
+@mixin font-material-theme-display-small {
+  font-weight: 400;
+  font-size: 36px;
+
+  // material-theme/display/small //
+  font-family: Roboto, sans-serif;
+  line-height: 122.22%;
+}
+
+@mixin font-material-theme-headline-large {
+  font-weight: 400;
+  font-size: 32px;
+
+  // material-theme/headline/large //
+  font-family: Roboto, sans-serif;
+  line-height: 125%;
+}
+
+@mixin font-material-theme-headline-medium {
+  font-weight: 400;
+  font-size: 28px;
+
+  // material-theme/headline/medium //
+  font-family: Roboto, sans-serif;
+  line-height: 128.57%;
+}
+
+@mixin font-material-theme-headline-small {
+  font-weight: 400;
+  font-size: 24px;
+
+  // material-theme/headline/small //
+  font-family: Roboto, sans-serif;
+  line-height: 133.33%;
+}
+
+@mixin font-material-theme-body-large {
+  font-weight: 400;
+  font-size: 16px;
+
+  // material-theme/body/large //
+  font-family: Roboto, sans-serif;
+  line-height: 150%;
+  letter-spacing: 0.5px;
+}
+
+@mixin font-material-theme-body-medium {
+  font-weight: 400;
+  font-size: 14px;
+
+  // material-theme/body/medium //
+  font-family: Roboto, sans-serif;
+  line-height: 142.86%;
+  letter-spacing: 0.2px;
+}
+
+@mixin font-material-theme-body-small {
+  font-weight: 400;
+  font-size: 12px;
+
+  // material-theme/body/small //
+  font-family: Roboto, sans-serif;
+  line-height: 133.33%;
+  letter-spacing: 0.4px;
+}
+
+@mixin font-material-theme-label-large {
+  font-weight: 500;
+  font-size: 14px;
+
+  // material-theme/label/large //
+  font-family: Roboto, sans-serif;
+  line-height: 142.86%;
+  letter-spacing: 0.1px;
+}
+
+@mixin font-material-theme-label-medium {
+  font-weight: 500;
+  font-size: 12px;
+
+  // material-theme/label/medium //
+  font-family: Roboto, sans-serif;
+  line-height: 133.33%;
+  letter-spacing: 0.5px;
+}
+
+@mixin font-material-theme-label-small {
+  font-weight: 500;
+  font-size: 11px;
+
+  // material-theme/label/small //
+  font-family: Roboto, sans-serif;
+  line-height: 145.45%;
+  letter-spacing: 0.5px;
+}
+
+@mixin font-material-theme-title-large {
+  font-weight: 400;
+  font-size: 22px;
+
+  // material-theme/title/large //
+  font-family: Roboto, sans-serif;
+  line-height: 127.27%;
+}
+
+@mixin font-material-theme-title-medium {
+  font-weight: 500;
+  font-size: 16px;
+
+  // material-theme/title/medium //
+  font-family: Roboto, sans-serif;
+  line-height: 150%;
+  letter-spacing: 0.2px;
+}
+
+@mixin font-material-theme-title-small {
+  font-weight: 500;
+  font-size: 14px;
+
+  // material-theme/title/small //
+  font-family: Roboto, sans-serif;
+  line-height: 142.86%;
+  letter-spacing: 0.1px;
+}
+
+@mixin font-display-text-d1 {
+  font-weight: 700;
+  font-size: 72px;
+
+  // Display Text/D1 //
+  font-family: $ff-sans-primary;
+
+  /* Recommend for responsive css clamp(mobile, mid, desktop) - 
+ you can change 5vw value
+  font-size:clamp(50px, 5vw, 72px); */
+  line-height: 125%;
+}
+
+@mixin font-display-text-d2 {
+  font-weight: 700;
+  font-size: 64px;
+
+  // Display Text/D2 //
+  font-family: $ff-sans-primary;
+
+  /* Recommend for responsive css clamp(mobile, mid, desktop) - 
+ you can change 5vw value
+  font-size:clamp(50px, 5vw, 64px); */
+  line-height: 121.88%;
+}
+
+@mixin font-headings-h1 {
+  font-weight: 700;
+  font-size: 56px;
+
+  // Headings/H1 //
+  font-family: $ff-sans-primary;
+
+  /* Recommend for responsive css clamp(mobile, mid, desktop) - 
+ you can change 5vw value
+  font-size:clamp(44.8px, 5vw, 56px); */
+  line-height: 121.43%;
+}
+
+@mixin font-headings-h2 {
+  font-weight: 700;
+  font-size: 48px;
+
+  // Headings/H2 //
+  font-family: $ff-sans-primary;
+  line-height: 120.83%;
+}
+
+@mixin font-headings-h3 {
+  font-weight: 700;
+  font-size: 40px;
+
+  // Headings/H3 //
+  font-family: $ff-sans-primary;
+  line-height: 120%;
+}
+
+@mixin font-headings-h4 {
+  font-weight: 700;
+  font-size: 32px;
+
+  // Headings/H4 //
+  font-family: $ff-sans-primary;
+  line-height: 128.12%;
+}
+
+@mixin font-headings-h5 {
+  font-weight: 700;
+  font-size: 24px;
+
+  // Headings/H5 //
+  font-family: $ff-sans-primary;
+  line-height: 133.33%;
+}
+
+@mixin font-headings-h6 {
+  font-weight: 700;
+  font-size: 20px;
+
+  // Headings/H6 //
+  font-family: $ff-sans-primary;
+  line-height: 140%;
+}
+
+@mixin font-body-text-b-l {
+  font-weight: 500;
+  font-size: 16px;
+
+  // Body Text/B-L //
+  font-family: $ff-sans-primary;
+  line-height: 156.25%;
+  letter-spacing: 0.5%;
+}
+
+@mixin font-body-text-b-s {
+  font-weight: 500;
+  font-size: 14px;
+
+  // Body Text/B-S //
+  font-family: $ff-sans-primary;
+  line-height: 171.43%;
+}
+
+@mixin font-button-text-button-large {
+  font-weight: 700;
+  font-size: 16px;
+
+  // Button Text/Button - Large //
+  font-family: $ff-sans-primary;
+  line-height: 156.25%;
+}
+
+@mixin font-button-text-button-small {
+  font-weight: 700;
+  font-size: 14px;
+
+  // Button Text/Button - Small //
+  font-family: $ff-sans-primary;
+  line-height: 171.43%;
+}
+
+@mixin font-14-m {
+  color: $clr-600-light;
+  font-weight: $fw-bold;
+  font-size: rem(14px);
+
+  // 14/m //
+  font-family: $ff-sans-primary;
+  line-height: divide(24, 14);
+}

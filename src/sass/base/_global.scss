@@ -4,29 +4,64 @@
 /* Global styles */
 
 body {
-  color: $clr-600-light;
-  font-weight: $fw-medium;
-  font-size: rem(16px);
+  color: $clr-grey-950;
+  font-weight: 500;
   font-family: $ff-sans-primary;
-  line-height: divide(24px, 16px); // Figma's auto
-  background-color: $clr-schemes-background-light;
+
+  // line-height: divide(24px, 16px); // Figma's auto
+  line-height: 1.5;
+  background-color: $clr-yellow;
 }
 
 .l-wrapper {
-  display: grid;
-  grid-template-rows: auto 1fr;
+  display: flex;
+  flex-direction: column;
   overflow: clip;
   min-block-size: 100%;
-}
 
-.is-locked {
-  overflow: hidden;
+  &__main {
+    flex: auto;
+  }
 }
 
 .l-container {
   max-inline-size: $frame;
   margin-inline: auto;
   padding-inline: $padding;
+}
+
+.display {
+  display: grid;
+  align-content: center;
+  min-block-size: 100svb;
+  padding-block: 2rem;
+
+  // .display__row
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-200;
+    justify-content: space-evenly;
+
+    @include media-width-to($xx-small) {
+      margin-inline: -$padding;
+    }
+
+    @include media-width-from($medium) {
+      gap: $spacing-250;
+    }
+  }
+
+  // .display__item
+
+  &__item {
+    flex: 0 rem(327px);
+
+    @include media-width-from($medium) {
+      flex: 0 rem(384px);
+    }
+  }
 }
 
 .l-flow {
@@ -36,62 +71,3 @@ body {
 }
 
 /* Utility classes */
-
-.u-hover-focus {
-  @extend %u-hover-focus;
-}
-
-.u-text-gradient {
-  // -webkit-fill-color: transparent;
-  color: transparent;
-  background-image: $clr-text-gradient;
-  background-clip: text;
-  background-size: 200%;
-  animation: u-text-gradient-bg-move 4s linear infinite;
-
-  @keyframes u-text-gradient-bg-move {
-    50% {
-      background-position: 100%;
-    }
-  }
-}
-
-.u-color-400 {
-  color: $clr-400-light;
-}
-
-.u-text-center {
-  text-align: center;
-}
-
-.u-text-start {
-  text-align: start;
-}
-
-.u-full-height {
-  block-size: 100%;
-}
-
-.u-sr-only {
-  @extend %visually-hidden;
-}
-
-// Typography
-
-.u-h1 {
-  font-weight: $fw-bold;
-  font-size: rsv-clamp(rem(40px), rem(64px));
-  line-height: 1.2;
-
-  @include media-width-from($medium) {
-    line-height: divide(78, 64);
-  }
-}
-
-/* Scope classes */
-
-/* Temporary classes */
-
-// ._main {
-//   padding-block-start: 10rem;
-// }

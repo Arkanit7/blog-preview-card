@@ -1,0 +1,83 @@
+@use "../abstracts" as *;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-150;
+  padding: $spacing-150;
+  border: rem(1px) solid $clr-grey-950;
+  background: $clr-white;
+  box-shadow: rem(8px 8px) 0 0 hsl(0deg 0% 0%);
+
+  @include media-width-from($xx-small) {
+    gap: $spacing-200;
+    padding: $spacing-200;
+    border-radius: rem(20px);
+  }
+
+  // .card__main
+
+  &__main {
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    gap: $spacing-100;
+
+    @include media-width-from($xx-small) {
+      gap: $spacing-150;
+    }
+  }
+
+  // .card__text-group
+
+  &__text-group {
+    flex: auto;
+    color: $clr-grey-500;
+    font-size: $fs-200;
+
+    @include media-width-from($medium) {
+      font-size: $fs-300;
+    }
+
+    @include not-last-children {
+      margin-block-start: $spacing-50;
+    }
+  }
+
+  // .card__address
+
+  &__address {
+    align-self: start;
+  }
+
+  // .card__picture
+
+  &__picture {
+    position: relative;
+    order: -1;
+    overflow: hidden;
+    aspect-ratio: 279/200;
+    border-radius: rem(10px);
+    background-color: $clr-yellow;
+
+    @include hover-focus {
+      img {
+        transform: rotate(5deg) scale(1.05);
+      }
+    }
+
+    @include media-width-from($medium) {
+      aspect-ratio: 336/200;
+    }
+
+    img {
+      position: absolute;
+      inset: 0;
+      object-fit: cover;
+      inline-size: 100%;
+      block-size: 100%;
+      transition: transform 0.5s;
+      will-change: transform;
+    }
+  }
+}

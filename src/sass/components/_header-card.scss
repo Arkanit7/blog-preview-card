@@ -1,0 +1,38 @@
+@use "../abstracts" as *;
+
+.header-card {
+  display: grid;
+  grid-template-areas: "tags" "published" "title";
+  gap: $spacing-150;
+
+  // .header-card__title
+
+  &__title {
+    grid-area: title;
+  }
+
+  // .header-card__published
+
+  &__published {
+    grid-area: published;
+    font-size: $fs-100;
+
+    @include media-width-from($medium) {
+      font-size: $fs-200;
+    }
+  }
+
+  // .header-card__tags
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    grid-area: tags;
+    gap: $spacing-100;
+  }
+
+  // .header-card__tag
+
+  &__tag {
+  }
+}

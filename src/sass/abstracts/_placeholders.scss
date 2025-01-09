@@ -12,9 +12,3 @@
   white-space: nowrap;
   clip-path: inset(50%);
 }
-
-%u-hover-focus {
-  @include hover-focus(color 0.3s) {
-    color: $clr-material-theme-ref-key-colors-primary;
-  }
-}

@@ -1,0 +1,53 @@
+---
+import { Image } from "astro:assets";
+import addressPicture from "../assets/image-avatar.webp";
+import illustrationPicture from "../assets/illustration-article.svg";
+---
+
+<article class="card">
+  <div class="card__main">
+    <header class="header-card">
+      <div class="header-card__title">
+        <h1 class="title">
+          <a class="title__link" href="#">HTML & CSS foundations</a>
+        </h1>
+      </div>
+      <p class="header-card__published">
+        Published <time datetime="21-12-23">21 Dec 2023</time>
+      </p>
+      <ul class="header-card__tags">
+        <li class="header-card__tag">
+          <a class="tag" href="#">Learning</a>
+        </li>
+      </ul>
+    </header>
+
+    <div class="card__text-group">
+      <p>
+        These languages are the backbone of every website, defining structure,
+        content, and presentation.
+      </p>
+    </div>
+  </div>
+
+  <div class="card__address">
+    <address class="address">
+      <a href="#" class="address__link">
+        <div class="address__name">Greg Hooper</div>
+        <div class="address__picture">
+          <Image
+            src={addressPicture}
+            alt=""
+            width={32}
+            height={32}
+            format="avif"
+          />
+        </div>
+      </a>
+    </address>
+  </div>
+
+  <a class="card__picture" href="#">
+    <img src={illustrationPicture.src} alt="" loading="lazy" />
+  </a>
+</article>

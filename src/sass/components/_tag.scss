@@ -1,0 +1,22 @@
+@use "../abstracts" as *;
+
+.tag {
+  display: inline-block;
+  padding-inline: $spacing-150;
+  padding-block: $spacing-50;
+  border-radius: rem(4px);
+  font-weight: 800;
+  font-size: $fs-100;
+  background-color: $clr-yellow;
+  transition-property: background-color, color;
+  transition-duration: 0.3s;
+
+  @include media-width-from($medium) {
+    font-size: $fs-200;
+  }
+
+  @include hover-focus {
+    color: $clr-yellow;
+    background-color: $clr-grey-950;
+  }
+}

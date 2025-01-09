@@ -1,0 +1,18 @@
+@use "../abstracts" as *;
+
+.title {
+  font-weight: 800;
+  font-size: $fs-400;
+
+  @include media-width-from($medium) {
+    font-size: $fs-500;
+  }
+
+  // .title__link
+
+  &__link {
+    @include hover-focus(color 0.3s) {
+      color: $clr-yellow;
+    }
+  }
+}

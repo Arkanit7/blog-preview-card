@@ -1,0 +1,43 @@
+@use "../abstracts" as *;
+
+.address {
+  // .address__link
+
+  &__link {
+    display: flex;
+    gap: $spacing-150;
+    align-items: center;
+    color: $clr-grey-950;
+
+    @include hover-focus(color 0.3s) {
+      color: $clr-yellow;
+    }
+  }
+
+  // .address__name
+
+  &__name {
+    font-weight: 800;
+    font-size: $fs-200;
+  }
+
+  // .address__picture
+
+  &__picture {
+    position: relative;
+    flex: none;
+    order: -1;
+    overflow: hidden;
+    inline-size: rem(32px);
+    block-size: rem(32px);
+    border-radius: 50%;
+
+    img {
+      position: absolute;
+      inset: 0;
+      object-fit: cover;
+      inline-size: 100%;
+      block-size: 100%;
+    }
+  }
+}
